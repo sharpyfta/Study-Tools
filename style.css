@@ -122,3 +122,60 @@ body {
     margin-left: 15px;
     cursor: pointer;
 }
+
+/* Modal Internal Styling */
+#modalBody h2 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+#modalBody p {
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+.cloak-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cloak-options button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cloak-options button:hover {
+    border-color: var(--accent);
+    background: #21262d;
+}
+
+.contact-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #30363d;
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="url"] {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
