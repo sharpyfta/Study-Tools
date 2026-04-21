@@ -1,93 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tools Portal</title>
+    <title>GN-Math | Study Tools</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Quick inline fix for layout consistency */
-        .header-area { text-align: center; padding: 20px; }
-        #topControls { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .ad-container { width: 100%; display: flex; justify-content: center; margin: 15px 0; }
-        #zoneFrame { width: 100%; height: 80vh; border: none; background: #fff; }
-    </style>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
+<body>
 
-<body class="dark-mode">
-
-    <div class="header-area">
-        <h1>Study Tools</h1>
-        <p>Resource Portal & Academic Utilities</p>
-    </div>
-
-    <div class="ad-container">
-        <iframe src="https://democratmachinesucceed.com/km9dvd7fp?key=51c9dd135146d5d93f5886779fc2b354" style="width:90%; height:90px; border:none;"></iframe>
-    </div>
-
-    <div id="topControls"> 
-        <input type="text" id="searchBar" placeholder="Search tools or games..." onkeyup="filterZones()">
-        
-        <div id="dataButtons">
-            <button onclick="saveData()">Save Progress</button>
-            <button onclick="document.getElementById('file').click()">Load Data</button>
-            <input type="file" id="file" style="display:none" onchange="loadData(event)" />
+    <nav class="navbar">
+        <div class="logo">GN-MATH<span>.DEV</span></div>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for tools or games..." onkeyup="search()">
         </div>
-
-        <select id="sortOptions" onchange="sortZones()">
-            <option value="name">Sort by Name</option>
-            <option value="id">Sort by ID</option>
-            <option value="popular">Sort by Popularity</option>
-        </select>
-    </div>
-
-    <div class="zone-wrapper">
-        <div id="zoneCount" class="zone-count"></div>
-        <div id="container">Loading academic resources...</div>
-    </div>      
-
-    <div id="zoneViewer" style="display:none;">
-        <div id="zoneInfo">
-            <div id="zoneTitle">
-                <span id="zoneName"></span> <span id="zoneId"></span>
-            </div>
-            <div id="controls">
-                <button onclick="closeZone()">Close</button>
-                <button onclick="fullscreenZone()">Fullscreen</button>
-                <button onclick="aboutBlank()">Open in Cloaked Tab (about:blank)</button>
-            </div>
+        <div class="nav-links">
+            <button onclick="cloakTab()">Settings</button>
         </div>
-        <iframe id="zoneFrame"></iframe>
-    </div>
+    </nav>
 
-    <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px;">Toggle Theme</button>
+    <main class="container">
+        <section class="game-grid" id="gameGrid">
+            <div class="card" onclick="openGame('https://example.com/game1')">
+                <img src="assets/game1.jpg" alt="Game Name">
+                <div class="card-info">
+                    <h3>Slope</h3>
+                    <span class="tag">Popular</span>
+                </div>
+            </div>
 
-    <div class="ad-container">
-        <iframe src="https://democratmachinesucceed.com/km9dvd7fp?key=51c9dd135146d5d93f5886779fc2b354" style="width:90%; height:90px; border:none;"></iframe>
-    </div>
+            <div class="card" onclick="openGame('https://example.com/game2')">
+                <img src="assets/game2.jpg" alt="Game Name">
+                <div class="card-info">
+                    <h3>1v1.LOL</h3>
+                    <span class="tag">Hot</span>
+                </div>
+            </div>
+            
+            </section>
+    </main>
 
     <script src="script.js"></script>
-    <script>
-        // Essential logic for the "about:blank" cloaking feature
-        function aboutBlank() {
-            const url = document.getElementById('zoneFrame').src;
-            const win = window.open();
-            if (!win) {
-                alert("Please allow popups to use cloaked mode.");
-                return;
-            }
-            win.document.body.style.margin = '0';
-            win.document.body.style.height = '100vh';
-            const iframe = win.document.createElement('iframe');
-            iframe.style.border = 'none';
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.margin = '0';
-            iframe.src = url;
-            win.document.body.appendChild(iframe);
-        }
-    </script>
 </body>
-
 </html>
