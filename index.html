@@ -2,43 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GN-Math | Study Tools</title>
+    <title>Study Tools | Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">GN-MATH<span>.DEV</span></div>
-        <div class="search-container">
-            <input type="text" id="searchBar" placeholder="Search for tools or games..." onkeyup="search()">
+        
+        <div class="search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" id="searchBar" placeholder="Search for tools..." onkeyup="filterGames()">
         </div>
-        <div class="nav-links">
-            <button onclick="cloakTab()">Settings</button>
+
+        <div class="nav-actions">
+            <button class="nav-btn" onclick="openModal('settings')"><i class="fa fa-cog"></i></button>
+            <button class="nav-btn" onclick="openModal('info')"><i class="fa fa-info-circle"></i></button>
+            <button class="nav-btn" onclick="openModal('contact')"><i class="fa fa-envelope"></i></button>
+            <button class="nav-btn" onclick="openModal('rules')"><i class="fa fa-gavel"></i></button>
         </div>
     </nav>
 
-    <main class="container">
-        <section class="game-grid" id="gameGrid">
-            <div class="card" onclick="openGame('https://example.com/game1')">
-                <img src="assets/game1.jpg" alt="Game Name">
-                <div class="card-info">
-                    <h3>Slope</h3>
-                    <span class="tag">Popular</span>
-                </div>
+    <div class="container">
+        <div class="grid" id="gameGrid">
             </div>
+    </div>
 
-            <div class="card" onclick="openGame('https://example.com/game2')">
-                <img src="assets/game2.jpg" alt="Game Name">
-                <div class="card-info">
-                    <h3>1v1.LOL</h3>
-                    <span class="tag">Hot</span>
-                </div>
-            </div>
-            
-            </section>
-    </main>
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
