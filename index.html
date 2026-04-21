@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Tools | GN-Style</title>
+    <title>Study Tools | Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">GN-MATH<span>.DEV</span></div>
+        <div class="logo">STUDY<span>TOOLS</span></div>
         
         <div class="search-container">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchBar" placeholder="Search tools..." onkeyup="filterContent()">
+            <input type="text" id="searchBar" placeholder="Search for games..." onkeyup="filterContent()">
         </div>
 
-        <div class="nav-buttons">
-            <button onclick="showModal('settings')"><i class="fa-solid fa-gear"></i></button>
-            <button onclick="showModal('info')"><i class="fa-solid fa-circle-info"></i></button>
-            <button onclick="showModal('contact')"><i class="fa-solid fa-envelope"></i></button>
-            <button onclick="showModal('rules')"><i class="fa-solid fa-gavel"></i></button>
+        <div class="nav-actions">
+            <button class="nav-btn" title="Cloaking & Themes" onclick="openModal('settings')"><i class="fa fa-cog"></i></button>
+            <button class="nav-btn" title="About" onclick="openModal('info')"><i class="fa fa-info-circle"></i></button>
+            <button class="nav-btn" title="Contact" onclick="openModal('contact')"><i class="fa fa-envelope"></i></button>
+            <button class="nav-btn" title="Request Game" onclick="openModal('rules')"><i class="fa fa-hammer"></i></button>
         </div>
     </nav>
 
-    <div class="main-content">
+    <main class="main-content">
         <div class="grid" id="contentGrid">
             </div>
-    </div>
+    </main>
 
     <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
         <div class="modal-box" onclick="event.stopPropagation()">
-            <div id="modalContent"></div>
-            <button class="close-btn" onclick="closeModal()">Close</button>
+            <div id="modalBody">
+                </div>
+            <button class="close-modal-btn" onclick="closeModal()">Close</button>
         </div>
     </div>
 
