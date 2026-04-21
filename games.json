@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Slope",
+    "url": "https://example.com/slope",
+    "image": "https://img.poki.com/cdn-cgi/image/quality=85,width=204,height=204,fit=cover,g=0.5x0.5,f=auto/9946890f587219f7f4577f8ec94b159f.png",
+    "tag": "Hot"
+  },
+  {
+    "name": "1v1.LOL",
+    "url": "https://example.com/1v1",
+    "image": "https://1v1.lol/img/logo.png",
+    "tag": "Trending"
+  }
+]
